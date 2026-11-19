@@ -1,0 +1,27 @@
+@theme static {
+  --font-sans: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  --color-canvas: #0c141c;
+  --color-panel: #14212c;
+  --color-panel-raised: #1a2a36;
+  --color-field: #1d2c38;
+  --color-line: #2e424f;
+  --color-ink: #eff5f8;
+  --color-muted: #a7b8c7;
+  --color-subtle: #768e9f;
+  --color-accent: #55e3dc;
+  --color-accent-strong: #008d8e;
+  --color-accent-hover: #00a1a1;
+  --color-low: #62d87b;
+  --color-moderate: #f3cf58;
+  --color-high: #ffad43;
+  --color-severe: #ff7180;
+  --color-no-travel: #bd3f65;
+  --color-route-alternate: #8aa9cb;
+  --color-route-third: #b1b8bc;
+  --color-map-land: #101e27;
+  --color-map-water: #142e40;
+  --color-map-road: #344954;
+  --color-map-label: #96aebb;
+  --radius-panel: 0.75rem;
+  --shadow-panel: 0 8px 24px #00000020;
+}

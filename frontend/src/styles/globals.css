@@ -1,0 +1,38 @@
+@import 'tailwindcss';
+@import './theme.css';
+
+@layer base {
+  html { color-scheme: dark; }
+  body { @apply m-0 min-w-80 bg-canvas font-sans text-ink antialiased; }
+  button, input { font: inherit; }
+  button { @apply cursor-pointer; }
+  button:disabled { @apply cursor-not-allowed opacity-50; }
+  button, input, a { -webkit-tap-highlight-color: transparent; }
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
+  input[type='datetime-local']::-webkit-calendar-picker-indicator { opacity: .65; }
+  ::selection { background: var(--color-accent-strong); color: var(--color-ink); }
+  * { scrollbar-width: thin; scrollbar-color: var(--color-line) transparent; }
+}
+
+@layer components {
+  .panel { @apply rounded-panel border border-line bg-panel shadow-panel; }
+  .field-input { @apply h-11 w-full min-w-0 rounded-lg border border-line bg-field px-3 text-sm text-ink transition-colors placeholder:text-subtle hover:border-subtle focus:border-accent focus:outline-none; }
+  .map-button { @apply flex size-9 items-center justify-center rounded-lg border border-line bg-panel/95 text-ink shadow-panel transition-colors hover:bg-panel-raised; }
+  .checkpoint-marker { width: 25px; height: 25px; border: 2px solid var(--color-accent); border-radius: 50%; background: var(--color-panel); color: var(--color-ink); font: 600 12px var(--font-sans); box-shadow: 0 2px 5px #0008; }
+  .checkpoint-marker[aria-pressed='true'] { background: var(--color-accent); color: var(--color-canvas); box-shadow: 0 0 0 5px color-mix(in srgb, var(--color-accent) 18%, transparent); }
+  .endpoint-marker { display: flex; align-items: center; gap: 8px; white-space: nowrap; color: var(--color-ink); font: 600 12px var(--font-sans); }
+  .endpoint-marker span { padding: 5px 8px; border: 1px solid var(--color-line); border-radius: 5px; background: var(--color-panel); }
+  .endpoint-marker i { width: 15px; height: 15px; border: 3px solid var(--color-ink); border-radius: 50%; background: var(--color-low); box-shadow: 0 2px 6px #0008; }
+  .endpoint-marker[data-destination='true'] i { background: var(--color-severe); }
+}
+
+.maplibregl-map { font-family: var(--font-sans); }
+.maplibregl-ctrl-attrib { background: var(--color-panel) !important; color: var(--color-muted) !important; font-size: 10px !important; }
+.maplibregl-ctrl-attrib a { color: var(--color-muted) !important; }
+.forecast-range { appearance: none; height: 5px; border-radius: 20px; cursor: pointer; }
+.forecast-range::-webkit-slider-thumb { appearance: none; height: 16px; width: 16px; border: 2px solid var(--color-ink); border-radius: 50%; background: var(--color-accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 12%, transparent); }
+.forecast-range::-moz-range-thumb { height: 13px; width: 13px; border: 2px solid var(--color-ink); border-radius: 50%; background: var(--color-accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
